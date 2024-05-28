@@ -1,31 +1,34 @@
-# MCCG
+Sure, here is the rewritten and completed `README.md`:
 
-This repository contains the dataset link and the code for our paper [MCCG: A ConvNeXt-based Multiple-Classifier Method for Cross-view Geo-localization](https://ieeexplore.ieee.org/document/10185134), IEEE Transactions on Circuits and Systems for Video Technology. Thank you for your kindly attention.
+# BiCrossNet: Towards Resource-Efficient Cross-View Geolocalization with Binary Neural Networks
 
+This repository contains the code for BiCrossNet, a novel approach to cross-view geolocalization utilizing Binary Neural Networks (BNNs) to significantly reduce computational complexity while maintaining competitive performance. The key contributions include the development of a bi-gradual unfreezing method to enhance transfer learning, a bi-partitioned optimization strategy to improve training stability, and logit-based knowledge distillation to supplement standard losses.
+![alt text](teaser.jpg)
+## Requirements
 
-## Requirement
-1. Download the [University-1652](https://github.com/layumi/University1652-Baseline) dataset
-2. Download the [SUES-200](https://github.com/Reza-Zhu/SUES-200-Benchmark) dataset
-3. Configuring the environment
-   * First you need to configure the torch and torchision from the [pytorch](https://pytorch.org/) website
-   * ```shell
-     pip install -r requirement.txt
-     ```
+1. Download the [University-1652](https://github.com/layumi/University1652-Baseline) dataset.
+2. Download the [SUES-200](https://github.com/Reza-Zhu/SUES-200-Benchmark) dataset.
+3. Configure the environment:
+    * Install PyTorch and TorchVision from the [PyTorch](https://pytorch.org/) website.
+    * Install the required packages:
+      ```shell
+      pip install -r requirements.txt
+      ```
 
-## About dataset
-The organization of the dataset.
+## Dataset Organization
 
-More detailed about Univetsity-1652 dataset structure:
+### University-1652 Dataset
+The directory structure of the University-1652 dataset should be as follows:
 ```
 ├── University-1652/
 │   ├── train/
-│       ├── drone/                   /* drone-view training images 
+│       ├── drone/                   /* drone-view training images */
 │           ├── 0001
 │           ├── 0002
 │           ...
-│       ├── street/                  /* street-view training images 
-│       ├── satellite/               /* satellite-view training images       
-│       ├── google/                  /* noisy street-view training images (collected from Google Image)
+│       ├── street/                  /* street-view training images */
+│       ├── satellite/               /* satellite-view training images */     
+│       ├── google/                  /* noisy street-view training images (collected from Google Image) */
 │   ├── test/
 │       ├── query_drone/  
 │       ├── gallery_drone/  
@@ -35,16 +38,18 @@ More detailed about Univetsity-1652 dataset structure:
 │       ├── gallery_satellite/ 
 │       ├── 4K_drone/
 ```
-More detailed about SUES-200 dataset structure:
+
+### SUES-200 Dataset
+The directory structure of the SUES-200 dataset should be as follows:
 ```
 ├── SUES-200/
 │   ├── train/
 │       ├── 150/
-│           ├── drone/                   /* drone-view training images 
+│           ├── drone/                   /* drone-view training images */
 │               ├── 0001
 │               ├── 0002
 │               ...
-│           ├── satellite/               /* satellite-view training images       
+│           ├── satellite/               /* satellite-view training images */     
 │       ├── 200/                  
 │       ├── 250/  
 │       ├── 300/  
@@ -59,21 +64,37 @@ More detailed about SUES-200 dataset structure:
 │       ├── 300/  
 ```
 
+## Weights of the teacher
+
+
+
+2. Download the teacher's model weights and pretrained backbone from [this link](https://drive.google.com/drive/folders/1ZW0s4pz47dlBXlUlyOtr6cv4uQ6AYjXa?usp=drive_link). Extract the files in the main folder.
+
 
 ## Train and Test
-We provide scripts to complete MCCG training and testing
-* Change the **data_dir** and **test_dir** paths in **run.sh** and then run:
-```shell
-bash run.sh
-```
 
-## Citation
+We provide scripts to complete BiCrossNet training and testing.
 
-```bibtex
-@ARTICLE{shen2023MCCG,
-  author={Shen, Tianrui and Wei, Yingmei and Kang, Lai and Wan, Shanshan and Yang, Yee-Hong},
-  journal={IEEE Transactions on Circuits and Systems for Video Technology}, 
-  title={MCCG: A ConvNeXt-based Multiple-Classifier Method for Cross-view Geo-localization}, 
-  year={2023},
-  doi={10.1109/TCSVT.2023.3296074}}
-```
+1. Change the `data_dir` and `test_dir` paths in the scripts as needed.
+2. To train and evaluate on University-1652, run:
+   ```shell
+   bash train_and_evaluate_university.sh
+   ```
+
+3. To train and evaluate on SUES-200 at different altitudes, run the respective scripts:
+   ```shell
+   bash train_and_evaluate_sue_150.sh
+   ```
+   ```shell
+   bash train_and_evaluate_sue_200.sh
+   ```
+   ```shell
+   bash train_and_evaluate_sue_250.sh
+   ```
+   ```shell
+   bash train_and_evaluate_sue_300.sh
+   ```
+
+## Contact
+
+For any questions or comments, please contact fontana.f@di.uniroma1.it
