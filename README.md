@@ -94,6 +94,15 @@ We provide scripts to complete BiCrossNet training and testing.
    ```shell
    bash train_and_evaluate_sue_300.sh
    ```
+## Acknowledgements
+
+We would like to express our gratitude to the following repositories, which made this work possible:
+
+- [Join The High Accuracy Club on ImageNet With A Binary Neural Network Ticket](https://github.com/hpi-xnor/BNext/)
+- [MCCG](https://github.com/mode-str/crossview)
+- [ReCU: Reviving the Dead Weights in Binary Neural Networks](https://github.com/z-hXu/ReCU)
+- [A ConvNet for the 2020s](https://github.com/facebookresearch/ConvNeXt)
+- [Lion - Pytorch](https://github.com/lucidrains/lion-pytorch)
 
 ## Contact
 
