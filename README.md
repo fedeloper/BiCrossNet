@@ -1,5 +1,3 @@
-Sure, here is the rewritten and completed `README.md`:
-
 # BiCrossNet: Towards Resource-Efficient Cross-View Geolocalization with Binary Neural Networks
 
 This repository contains the code for BiCrossNet, a novel approach to cross-view geolocalization utilizing Binary Neural Networks (BNNs) to significantly reduce computational complexity while maintaining competitive performance. The key contributions include the development of a bi-gradual unfreezing method to enhance transfer learning, a bi-partitioned optimization strategy to improve training stability, and logit-based knowledge distillation to supplement standard losses.
