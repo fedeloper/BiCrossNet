@@ -66,7 +66,7 @@ The directory structure of the SUES-200 dataset should be as follows:
 
 
 
-2. Download the teacher's model weights and pretrained backbone from [this link](https://drive.google.com/drive/folders/1ZW0s4pz47dlBXlUlyOtr6cv4uQ6AYjXa?usp=drive_link). Extract the files in the main folder.
+2. Download the teacher's model weights and pretrained backbone from [upon acceptance]. Extract the files in the main folder.
 
 
 ## Train and Test
